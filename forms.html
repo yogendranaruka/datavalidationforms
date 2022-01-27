@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+    <style>
+        p {
+            color: red;
+        }
+
+        .maincontainer {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: rosybrown;
+        }
+
+        .container {
+            background-color: white;
+            width: 25vw;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            border-radius: 5%;
+            box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.4);
+        }
+        #passsection{
+            position: relative;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .box .input {
+            width: 200px;
+        }
+
+        .label {
+            width: 100px;
+        }
+
+        #pass1 {
+            width: 176px;
+            height: 7px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        #show   {
+            position: absolute;
+            color: blue;
+            width: 50px;
+            margin-left: 2px;
+            top: 1px;
+            cursor: pointer;
+        }   
+
+        #hide {
+            display: none;
+            position: absolute;
+            top: 1px;
+            color: blue;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        .submit {
+            text-align: center;
+        }
+        .submit input{
+            border: none;
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 2px 2px 2px gray;
+        }
+        #cityinfo{
+            color: green;
+        }
+    </style>
+    <script src="forms.js" defer></script>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="container">
+            <form action="http://localhost:6700/students" method="post" >
+                <div class="box">
+                    <div class="label"><label for="uid">Roll No.</label></div>
+                    <div class="input"><input type="text" name="uid" id="uid" readonly oninput="onloads()"><br><br>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="fname">First Name</label></div>
+                    <div class="input"><input type="text" name="fname" id="fname" onblur="firstname()">
+                        <p id="fout"></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="lname">Last Name</label></div>
+                    <div class="input"><input type="text" name="lname" id="lname" onblur="lastname()"
+                            oninput="lastname()">
+                        <p id="lout"></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="email">Email Address</label></div>
+                    <div class="input"><input type="email" name="email" id="email" onblur="email1()" oninput="email1()">
+                        <p id="eout"></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="phone">Phone Number</label></div>
+                    <div class="input"><input type="tel" name="phone" id="phone" oninput="phoneno()" onblur="phoneno()">
+                        <p id="pnout"></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="city">City</label></div>
+                    <div class="input"><input type="text" name="city" id="city"  onblur="cityout()">
+                        <p id="cityinfo" onchange="cityout()"></p>
+                        <p id="cityout"></p>
+                    </div>
+                </div>
+                <div id="passsection" class="box">
+                    <div class="label"><label for="pass">Set Password</label></div>
+                    <div class="input"><input type="password" name="pass" id="pass" onblur="pass1()" oninput="pass1()">
+                        <span id="show" onclick="showhide()">Show</span>
+                        <span id="hide"  onclick="showhide()">Hide</span>
+                        <div id="pass1"></div>
+                        <p id="pout"></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="label"><label for="cpass">Confirm Password</label></div>
+                        <div id="cpass1"></div>
+                    <div class="input"><input type="password" name="cpass" id="cpass" onblur="matchpass()" oninput="matchpass()">
+                        <p id="cpout"></p>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

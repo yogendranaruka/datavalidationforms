@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "uid": "879",
+      "fname": "Yogendra",
+      "lname": "Naruka",
+      "email": "yogendranaruka1995@gmail.com",
+      "phone": "9672974802",
+      "pass": "123456789123456789",
+      "cpass": "123456789123456789",
+      "id": 1
+    },
+    {
+      "uid": "333",
+      "fname": "KISHAN",
+      "lname": "NARUKA",
+      "email": "KISHAN@GMAIL.COM",
+      "phone": "8302349952",
+      "pass": "1234567896",
+      "cpass": "1234567896",
+      "id": 2
+    }
+  ]
+}
